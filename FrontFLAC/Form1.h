@@ -174,6 +174,10 @@ namespace FrontFLAC {
 			// 
 			// lstFiles
 			// 
+			this->lstFiles->AllowDrop = true;
+			this->lstFiles->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->lstFiles->FormattingEnabled = true;
 			this->lstFiles->HorizontalScrollbar = true;
 			this->lstFiles->ItemHeight = 32;
@@ -319,6 +323,10 @@ namespace FrontFLAC {
 				L"o encode");
 			this->tbLevel->Value = 5;
 			this->tbLevel->ValueChanged += gcnew System::EventHandler(this, &Form1::tbLevel_ValueChanged);
+			// 
+			// dlgOutputDirectory
+			// 
+			this->dlgOutputDirectory->HelpRequest += gcnew System::EventHandler(this, &Form1::dlgOutputDirectory_HelpRequest);
 			// 
 			// gbOutputDir
 			// 
@@ -528,6 +536,10 @@ namespace FrontFLAC {
 			this->btnAdvanced->UseVisualStyleBackColor = true;
 			this->btnAdvanced->Click += gcnew System::EventHandler(this, &Form1::btnAdvanced_Click);
 			// 
+			// ttHelp
+			// 
+			this->ttHelp->Popup += gcnew System::Windows::Forms::PopupEventHandler(this, &Form1::ttHelp_Popup);
+			// 
 			// btnAbout
 			// 
 			this->btnAbout->Location = System::Drawing::Point(1081, 648);
@@ -543,8 +555,8 @@ namespace FrontFLAC {
 			// Form1
 			// 
 			this->AllowDrop = true;
-			this->AutoScaleDimensions = System::Drawing::SizeF(13, 32);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(192, 192);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->ClientSize = System::Drawing::Size(1261, 940);
 			this->Controls->Add(this->btnAbout);
 			this->Controls->Add(this->btnAdvanced);
@@ -569,6 +581,7 @@ namespace FrontFLAC {
 			this->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->MaximizeBox = false;
 			this->Name = L"Form1";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"FrontFLAC";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->DragDrop += gcnew System::Windows::Forms::DragEventHandler(this, &Form1::lstFiles_DragDrop);
@@ -658,7 +671,7 @@ private: System::Void btnOutputDirSameAsInput_Click(System::Object^  sender, Sys
 
 private: System::Void btnEncode_Click(System::Object^  sender, System::EventArgs^  e) {
 			 String ^ fileargs = "";
-			 String ^ command  = "tools/flac.exe";
+			 String ^ command  = "flac.exe";
 			 String ^ args = "";
 			 String ^ fileTemp = "";
 			 String ^ ext = ".flac";
@@ -747,7 +760,7 @@ private: System::Void btnEncode_Click(System::Object^  sender, System::EventArgs
 				 fileargs = "";
 				 Console::WriteLine("");
 				 Console::WriteLine("Now adding ReplayGain, this can take a while... ");
-				 p->StartInfo->FileName = "tools/metaflac.exe";
+				 p->StartInfo->FileName = "metaflac.exe";
 				 args = "--add-replay-gain ";
 				 for(i=0; i<numberOfFiles; i++){
 					 if(txtOutputDirectory->Text != "<< Same as input directory >>"){
@@ -776,7 +789,7 @@ private: System::Void btnEncode_Click(System::Object^  sender, System::EventArgs
 
 private: System::Void btnDecode_Click(System::Object^  sender, System::EventArgs^  e) {
 			 String ^ fileargs = "";
-			 String ^ command  = "tools/flac.exe";
+			 String ^ command  = "flac.exe";
 			 String ^ args = "-d ";
 			 String ^ fileTemp = "";
 			 COORD c;
@@ -839,7 +852,7 @@ private: System::Void btnDecode_Click(System::Object^  sender, System::EventArgs
 private: System::Void btnTest_Click(System::Object^  sender, System::EventArgs^  e) {
 			 // Let's first create some kind of BAT-file
 			 String ^ fileargs = "";
-			 String ^ command  = "tools/flac.exe";
+			 String ^ command  = "flac.exe";
 			 String ^ args = "-t ";
 			 COORD c;
 			 int numberOfFiles = lstFiles->Items->Count;
@@ -885,7 +898,7 @@ private: System::Void btnTest_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void btnFingerprint_Click(System::Object^  sender, System::EventArgs^  e) {
 			 // Let's first create some kind of BAT-file
 			 String ^ fileargs = "";
-			 String ^ command = "tools/metaflac.exe";
+			 String ^ command = "metaflac.exe";
 			 String ^ args = "--show-md5sum ";
 			 COORD c;
 			 int numberOfFiles = lstFiles->Items->Count;
@@ -964,15 +977,19 @@ private: System::Void lstFiles_DragDrop(System::Object^  sender, System::Windows
 			 }
 		 }
 private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
-			 if(!(File::Exists("tools/flac.exe"))){
+			 if(!(File::Exists("flac.exe"))){
 				 MessageBox::Show("flac.exe is not found, FrontFLAC can't be used without it.","FLAC Commandline tools not found",MessageBoxButtons::OK,MessageBoxIcon::Error);
 				 exit(1);
 			 }
-			 if(!(File::Exists("tools/metaflac.exe"))){
+			 if(!(File::Exists("metaflac.exe"))){
 				 MessageBox::Show("metaflac.exe is not found, FrontFLAC can't be used without it.","FLAC Commandline tools not found",MessageBoxButtons::OK,MessageBoxIcon::Error);
 				 exit(1);
 			 }
 		 }
+private: System::Void dlgOutputDirectory_HelpRequest(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void ttHelp_Popup(System::Object^ sender, System::Windows::Forms::PopupEventArgs^ e) {
+}
 };
 }
 

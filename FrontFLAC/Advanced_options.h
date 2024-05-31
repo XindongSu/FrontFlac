@@ -94,7 +94,8 @@ namespace FrontFLAC {
 			// 
 			// btnCommandHelp
 			// 
-			this->btnCommandHelp->Location = System::Drawing::Point(609, 51);
+			this->btnCommandHelp->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->btnCommandHelp->Location = System::Drawing::Point(644, 51);
 			this->btnCommandHelp->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnCommandHelp->Name = L"btnCommandHelp";
 			this->btnCommandHelp->Size = System::Drawing::Size(232, 56);
@@ -105,28 +106,33 @@ namespace FrontFLAC {
 			// 
 			// grpbExtraOptions
 			// 
+			this->grpbExtraOptions->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->grpbExtraOptions->Controls->Add(this->txtCommandLine);
 			this->grpbExtraOptions->Controls->Add(this->btnCommandHelp);
 			this->grpbExtraOptions->Location = System::Drawing::Point(15, 17);
 			this->grpbExtraOptions->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->grpbExtraOptions->Name = L"grpbExtraOptions";
 			this->grpbExtraOptions->Padding = System::Windows::Forms::Padding(6, 8, 6, 8);
-			this->grpbExtraOptions->Size = System::Drawing::Size(853, 123);
+			this->grpbExtraOptions->Size = System::Drawing::Size(888, 123);
 			this->grpbExtraOptions->TabIndex = 1;
 			this->grpbExtraOptions->TabStop = false;
 			this->grpbExtraOptions->Text = L"Extra command line options";
 			// 
 			// txtCommandLine
 			// 
+			this->txtCommandLine->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->txtCommandLine->Location = System::Drawing::Point(15, 60);
 			this->txtCommandLine->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->txtCommandLine->Name = L"txtCommandLine";
-			this->txtCommandLine->Size = System::Drawing::Size(582, 39);
+			this->txtCommandLine->Size = System::Drawing::Size(617, 39);
 			this->txtCommandLine->TabIndex = 1;
 			// 
 			// btnOK
 			// 
-			this->btnOK->Location = System::Drawing::Point(706, 357);
+			this->btnOK->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->btnOK->Location = System::Drawing::Point(729, 362);
 			this->btnOK->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnOK->Name = L"btnOK";
 			this->btnOK->Size = System::Drawing::Size(162, 56);
@@ -137,28 +143,33 @@ namespace FrontFLAC {
 			// 
 			// grpbCuesheet
 			// 
+			this->grpbCuesheet->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->grpbCuesheet->Controls->Add(this->txtCuesheet);
 			this->grpbCuesheet->Controls->Add(this->btnCueSheet);
 			this->grpbCuesheet->Location = System::Drawing::Point(15, 170);
 			this->grpbCuesheet->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->grpbCuesheet->Name = L"grpbCuesheet";
 			this->grpbCuesheet->Padding = System::Windows::Forms::Padding(6, 8, 6, 8);
-			this->grpbCuesheet->Size = System::Drawing::Size(853, 123);
+			this->grpbCuesheet->Size = System::Drawing::Size(888, 123);
 			this->grpbCuesheet->TabIndex = 3;
 			this->grpbCuesheet->TabStop = false;
 			this->grpbCuesheet->Text = L"Embed cuesheet (only for encoding)";
 			// 
 			// txtCuesheet
 			// 
+			this->txtCuesheet->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->txtCuesheet->Location = System::Drawing::Point(15, 60);
 			this->txtCuesheet->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->txtCuesheet->Name = L"txtCuesheet";
-			this->txtCuesheet->Size = System::Drawing::Size(582, 39);
+			this->txtCuesheet->Size = System::Drawing::Size(617, 39);
 			this->txtCuesheet->TabIndex = 1;
 			// 
 			// btnCueSheet
 			// 
-			this->btnCueSheet->Location = System::Drawing::Point(609, 51);
+			this->btnCueSheet->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->btnCueSheet->Location = System::Drawing::Point(644, 51);
 			this->btnCueSheet->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnCueSheet->Name = L"btnCueSheet";
 			this->btnCueSheet->Size = System::Drawing::Size(232, 56);
@@ -173,6 +184,8 @@ namespace FrontFLAC {
 			// 
 			// chkIgnoreChunkSize
 			// 
+			this->chkIgnoreChunkSize->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->chkIgnoreChunkSize->AutoSize = true;
 			this->chkIgnoreChunkSize->Location = System::Drawing::Point(15, 309);
 			this->chkIgnoreChunkSize->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
@@ -184,9 +197,10 @@ namespace FrontFLAC {
 			// 
 			// Advanced_options
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(13, 32);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(883, 430);
+			this->AutoScaleDimensions = System::Drawing::SizeF(192, 192);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
+			this->AutoSize = true;
+			this->ClientSize = System::Drawing::Size(918, 446);
 			this->ControlBox = false;
 			this->Controls->Add(this->chkIgnoreChunkSize);
 			this->Controls->Add(this->grpbCuesheet);
@@ -198,6 +212,7 @@ namespace FrontFLAC {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->Name = L"Advanced_options";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Advanced options";
 			this->grpbExtraOptions->ResumeLayout(false);
 			this->grpbExtraOptions->PerformLayout();
@@ -218,7 +233,7 @@ private: System::Void btnCommandHelp_Click(System::Object^  sender, System::Even
 			 SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE),c);
 
 			 Process^ p = gcnew Process();
-			 p->StartInfo->FileName = "tools/flac.exe";
+			 p->StartInfo->FileName = "flac.exe";
 			 p->StartInfo->UseShellExecute = false;
 			 p->StartInfo->Arguments = "-H";
 			 p->Start();
