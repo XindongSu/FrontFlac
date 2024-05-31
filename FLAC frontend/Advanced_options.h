@@ -12,7 +12,7 @@ using namespace System::Diagnostics;
 using namespace System::Drawing;
 
 
-namespace FLACfrontend {
+namespace FrontFLAC {
 
 	/// <summary>
 	/// Summary for Advanced_options
@@ -78,7 +78,7 @@ namespace FLACfrontend {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Advanced_options::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Advanced_options::typeid));
 			this->btnCommandHelp = (gcnew System::Windows::Forms::Button());
 			this->grpbExtraOptions = (gcnew System::Windows::Forms::GroupBox());
 			this->txtCommandLine = (gcnew System::Windows::Forms::TextBox());
@@ -94,9 +94,10 @@ namespace FLACfrontend {
 			// 
 			// btnCommandHelp
 			// 
-			this->btnCommandHelp->Location = System::Drawing::Point(214, 19);
+			this->btnCommandHelp->Location = System::Drawing::Point(609, 51);
+			this->btnCommandHelp->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnCommandHelp->Name = L"btnCommandHelp";
-			this->btnCommandHelp->Size = System::Drawing::Size(107, 23);
+			this->btnCommandHelp->Size = System::Drawing::Size(232, 56);
 			this->btnCommandHelp->TabIndex = 0;
 			this->btnCommandHelp->Text = L"See complete help";
 			this->btnCommandHelp->UseVisualStyleBackColor = true;
@@ -106,25 +107,29 @@ namespace FLACfrontend {
 			// 
 			this->grpbExtraOptions->Controls->Add(this->txtCommandLine);
 			this->grpbExtraOptions->Controls->Add(this->btnCommandHelp);
-			this->grpbExtraOptions->Location = System::Drawing::Point(13, 12);
+			this->grpbExtraOptions->Location = System::Drawing::Point(15, 17);
+			this->grpbExtraOptions->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->grpbExtraOptions->Name = L"grpbExtraOptions";
-			this->grpbExtraOptions->Size = System::Drawing::Size(327, 56);
+			this->grpbExtraOptions->Padding = System::Windows::Forms::Padding(6, 8, 6, 8);
+			this->grpbExtraOptions->Size = System::Drawing::Size(853, 123);
 			this->grpbExtraOptions->TabIndex = 1;
 			this->grpbExtraOptions->TabStop = false;
 			this->grpbExtraOptions->Text = L"Extra command line options";
 			// 
 			// txtCommandLine
 			// 
-			this->txtCommandLine->Location = System::Drawing::Point(7, 21);
+			this->txtCommandLine->Location = System::Drawing::Point(15, 60);
+			this->txtCommandLine->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->txtCommandLine->Name = L"txtCommandLine";
-			this->txtCommandLine->Size = System::Drawing::Size(201, 20);
+			this->txtCommandLine->Size = System::Drawing::Size(582, 39);
 			this->txtCommandLine->TabIndex = 1;
 			// 
 			// btnOK
 			// 
-			this->btnOK->Location = System::Drawing::Point(146, 158);
+			this->btnOK->Location = System::Drawing::Point(706, 357);
+			this->btnOK->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnOK->Name = L"btnOK";
-			this->btnOK->Size = System::Drawing::Size(75, 23);
+			this->btnOK->Size = System::Drawing::Size(162, 56);
 			this->btnOK->TabIndex = 2;
 			this->btnOK->Text = L"OK";
 			this->btnOK->UseVisualStyleBackColor = true;
@@ -134,25 +139,29 @@ namespace FLACfrontend {
 			// 
 			this->grpbCuesheet->Controls->Add(this->txtCuesheet);
 			this->grpbCuesheet->Controls->Add(this->btnCueSheet);
-			this->grpbCuesheet->Location = System::Drawing::Point(13, 74);
+			this->grpbCuesheet->Location = System::Drawing::Point(15, 170);
+			this->grpbCuesheet->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->grpbCuesheet->Name = L"grpbCuesheet";
-			this->grpbCuesheet->Size = System::Drawing::Size(327, 54);
+			this->grpbCuesheet->Padding = System::Windows::Forms::Padding(6, 8, 6, 8);
+			this->grpbCuesheet->Size = System::Drawing::Size(853, 123);
 			this->grpbCuesheet->TabIndex = 3;
 			this->grpbCuesheet->TabStop = false;
 			this->grpbCuesheet->Text = L"Embed cuesheet (only for encoding)";
 			// 
 			// txtCuesheet
 			// 
-			this->txtCuesheet->Location = System::Drawing::Point(7, 20);
+			this->txtCuesheet->Location = System::Drawing::Point(15, 60);
+			this->txtCuesheet->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->txtCuesheet->Name = L"txtCuesheet";
-			this->txtCuesheet->Size = System::Drawing::Size(201, 20);
+			this->txtCuesheet->Size = System::Drawing::Size(582, 39);
 			this->txtCuesheet->TabIndex = 1;
 			// 
 			// btnCueSheet
 			// 
-			this->btnCueSheet->Location = System::Drawing::Point(214, 18);
+			this->btnCueSheet->Location = System::Drawing::Point(609, 51);
+			this->btnCueSheet->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnCueSheet->Name = L"btnCueSheet";
-			this->btnCueSheet->Size = System::Drawing::Size(107, 23);
+			this->btnCueSheet->Size = System::Drawing::Size(232, 56);
 			this->btnCueSheet->TabIndex = 0;
 			this->btnCueSheet->Text = L"Select cuesheet";
 			this->btnCueSheet->UseVisualStyleBackColor = true;
@@ -165,25 +174,29 @@ namespace FLACfrontend {
 			// chkIgnoreChunkSize
 			// 
 			this->chkIgnoreChunkSize->AutoSize = true;
-			this->chkIgnoreChunkSize->Location = System::Drawing::Point(30, 134);
+			this->chkIgnoreChunkSize->Location = System::Drawing::Point(15, 309);
+			this->chkIgnoreChunkSize->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->chkIgnoreChunkSize->Name = L"chkIgnoreChunkSize";
-			this->chkIgnoreChunkSize->Size = System::Drawing::Size(286, 17);
+			this->chkIgnoreChunkSize->Size = System::Drawing::Size(631, 36);
 			this->chkIgnoreChunkSize->TabIndex = 7;
 			this->chkIgnoreChunkSize->Text = L"Ignore WAVE filesize (for files > 4GB, use with caution!)";
 			this->chkIgnoreChunkSize->UseVisualStyleBackColor = true;
 			// 
 			// Advanced_options
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(13, 32);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(352, 193);
+			this->ClientSize = System::Drawing::Size(883, 430);
 			this->ControlBox = false;
 			this->Controls->Add(this->chkIgnoreChunkSize);
 			this->Controls->Add(this->grpbCuesheet);
 			this->Controls->Add(this->btnOK);
 			this->Controls->Add(this->grpbExtraOptions);
+			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->Name = L"Advanced_options";
 			this->Text = L"Advanced options";
 			this->grpbExtraOptions->ResumeLayout(false);

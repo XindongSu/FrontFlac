@@ -6,7 +6,7 @@
 #include "Advanced_options.h"
 
 
-namespace FLACfrontend {
+namespace FrontFLAC {
 
 	using namespace System;
 	using namespace System::Diagnostics;
@@ -132,7 +132,7 @@ namespace FLACfrontend {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			this->lstFiles = (gcnew System::Windows::Forms::ListBox());
 			this->btnAdd = (gcnew System::Windows::Forms::Button());
 			this->btnRemove = (gcnew System::Windows::Forms::Button());
@@ -166,7 +166,7 @@ namespace FLACfrontend {
 			this->ttHelp = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->btnAbout = (gcnew System::Windows::Forms::Button());
 			this->gbEncoding->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->tbLevel))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tbLevel))->BeginInit();
 			this->gbOutputDir->SuspendLayout();
 			this->gbGeneral->SuspendLayout();
 			this->gbDecoding->SuspendLayout();
@@ -176,16 +176,19 @@ namespace FLACfrontend {
 			// 
 			this->lstFiles->FormattingEnabled = true;
 			this->lstFiles->HorizontalScrollbar = true;
-			this->lstFiles->Location = System::Drawing::Point(12, 12);
+			this->lstFiles->ItemHeight = 32;
+			this->lstFiles->Location = System::Drawing::Point(26, 29);
+			this->lstFiles->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->lstFiles->Name = L"lstFiles";
-			this->lstFiles->Size = System::Drawing::Size(393, 134);
+			this->lstFiles->Size = System::Drawing::Size(1041, 324);
 			this->lstFiles->TabIndex = 0;
 			// 
 			// btnAdd
 			// 
-			this->btnAdd->Location = System::Drawing::Point(412, 12);
+			this->btnAdd->Location = System::Drawing::Point(1079, 29);
+			this->btnAdd->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnAdd->Name = L"btnAdd";
-			this->btnAdd->Size = System::Drawing::Size(75, 23);
+			this->btnAdd->Size = System::Drawing::Size(162, 56);
 			this->btnAdd->TabIndex = 1;
 			this->btnAdd->Text = L"&Add files";
 			this->ttHelp->SetToolTip(this->btnAdd, L"Add files to be encoded/decoded/checked etc.");
@@ -194,9 +197,10 @@ namespace FLACfrontend {
 			// 
 			// btnRemove
 			// 
-			this->btnRemove->Location = System::Drawing::Point(412, 42);
+			this->btnRemove->Location = System::Drawing::Point(1079, 104);
+			this->btnRemove->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnRemove->Name = L"btnRemove";
-			this->btnRemove->Size = System::Drawing::Size(75, 23);
+			this->btnRemove->Size = System::Drawing::Size(162, 56);
 			this->btnRemove->TabIndex = 2;
 			this->btnRemove->Text = L"&Remove file";
 			this->ttHelp->SetToolTip(this->btnRemove, L"Remove one file from the list");
@@ -205,9 +209,10 @@ namespace FLACfrontend {
 			// 
 			// btnClear
 			// 
-			this->btnClear->Location = System::Drawing::Point(412, 72);
+			this->btnClear->Location = System::Drawing::Point(1079, 176);
+			this->btnClear->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnClear->Name = L"btnClear";
-			this->btnClear->Size = System::Drawing::Size(75, 23);
+			this->btnClear->Size = System::Drawing::Size(162, 56);
 			this->btnClear->TabIndex = 3;
 			this->btnClear->Text = L"&Clear filelist";
 			this->ttHelp->SetToolTip(this->btnClear, L"Clear the list of files to be encoded/decoded/checked etc.");
@@ -216,7 +221,7 @@ namespace FLACfrontend {
 			// 
 			// dlgAddFile
 			// 
-			this->dlgAddFile->Filter = L"Supported Files|*.wav;*.flac;*.ogg;*.oga;*.aiff;*.w64;*.raw|FLAC files|*.flac|Unc" 
+			this->dlgAddFile->Filter = L"Supported Files|*.wav;*.flac;*.ogg;*.oga;*.aiff;*.w64;*.raw|FLAC files|*.flac|Unc"
 				L"ompressed files|*.wav;*.w64;*.aiff;*.raw|OGG Files|*.ogg;*.oga";
 			this->dlgAddFile->Multiselect = true;
 			this->dlgAddFile->FileOk += gcnew System::ComponentModel::CancelEventHandler(this, &Form1::dlgAddFile_FileOk);
@@ -229,9 +234,11 @@ namespace FLACfrontend {
 			this->gbEncoding->Controls->Add(this->textLevel);
 			this->gbEncoding->Controls->Add(this->lblLevel);
 			this->gbEncoding->Controls->Add(this->tbLevel);
-			this->gbEncoding->Location = System::Drawing::Point(12, 152);
+			this->gbEncoding->Location = System::Drawing::Point(26, 375);
+			this->gbEncoding->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->gbEncoding->Name = L"gbEncoding";
-			this->gbEncoding->Size = System::Drawing::Size(200, 134);
+			this->gbEncoding->Padding = System::Windows::Forms::Padding(6, 8, 6, 8);
+			this->gbEncoding->Size = System::Drawing::Size(549, 329);
 			this->gbEncoding->TabIndex = 4;
 			this->gbEncoding->TabStop = false;
 			this->gbEncoding->Text = L"Encoding options";
@@ -240,9 +247,10 @@ namespace FLACfrontend {
 			// 
 			this->chkReplayGainAlbum->AutoSize = true;
 			this->chkReplayGainAlbum->Enabled = false;
-			this->chkReplayGainAlbum->Location = System::Drawing::Point(30, 108);
+			this->chkReplayGainAlbum->Location = System::Drawing::Point(65, 265);
+			this->chkReplayGainAlbum->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->chkReplayGainAlbum->Name = L"chkReplayGainAlbum";
-			this->chkReplayGainAlbum->Size = System::Drawing::Size(164, 17);
+			this->chkReplayGainAlbum->Size = System::Drawing::Size(362, 36);
 			this->chkReplayGainAlbum->TabIndex = 5;
 			this->chkReplayGainAlbum->Text = L"Treat input files as one album";
 			this->ttHelp->SetToolTip(this->chkReplayGainAlbum, L"If set, all input files will be treated");
@@ -251,9 +259,10 @@ namespace FLACfrontend {
 			// chkReplayGain
 			// 
 			this->chkReplayGain->AutoSize = true;
-			this->chkReplayGain->Location = System::Drawing::Point(13, 85);
+			this->chkReplayGain->Location = System::Drawing::Point(28, 209);
+			this->chkReplayGain->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->chkReplayGain->Name = L"chkReplayGain";
-			this->chkReplayGain->Size = System::Drawing::Size(128, 17);
+			this->chkReplayGain->Size = System::Drawing::Size(268, 36);
 			this->chkReplayGain->TabIndex = 4;
 			this->chkReplayGain->Text = L"Calculate ReplayGain";
 			this->ttHelp->SetToolTip(this->chkReplayGain, L"If set, ReplayGain tags are added");
@@ -265,9 +274,10 @@ namespace FLACfrontend {
 			this->chkVerify->AutoSize = true;
 			this->chkVerify->Checked = true;
 			this->chkVerify->CheckState = System::Windows::Forms::CheckState::Checked;
-			this->chkVerify->Location = System::Drawing::Point(13, 61);
+			this->chkVerify->Location = System::Drawing::Point(28, 151);
+			this->chkVerify->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->chkVerify->Name = L"chkVerify";
-			this->chkVerify->Size = System::Drawing::Size(123, 17);
+			this->chkVerify->Size = System::Drawing::Size(269, 36);
 			this->chkVerify->TabIndex = 3;
 			this->chkVerify->Text = L"Verify after encoding";
 			this->ttHelp->SetToolTip(this->chkVerify, L"If set, the resulting file is checked for integrity");
@@ -276,33 +286,36 @@ namespace FLACfrontend {
 			// textLevel
 			// 
 			this->textLevel->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->textLevel->Location = System::Drawing::Point(48, 27);
+			this->textLevel->Location = System::Drawing::Point(104, 67);
+			this->textLevel->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->textLevel->Name = L"textLevel";
 			this->textLevel->ReadOnly = true;
-			this->textLevel->Size = System::Drawing::Size(21, 20);
+			this->textLevel->Size = System::Drawing::Size(41, 39);
 			this->textLevel->TabIndex = 2;
 			this->textLevel->Text = L"5";
 			this->textLevel->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->ttHelp->SetToolTip(this->textLevel, L"The compression level, a higher level makes smaller files, but takes longer to en" 
+			this->ttHelp->SetToolTip(this->textLevel, L"The compression level, a higher level makes smaller files, but takes longer to en"
 				L"code");
 			// 
 			// lblLevel
 			// 
 			this->lblLevel->AutoSize = true;
-			this->lblLevel->Location = System::Drawing::Point(10, 30);
+			this->lblLevel->Location = System::Drawing::Point(22, 73);
+			this->lblLevel->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->lblLevel->Name = L"lblLevel";
-			this->lblLevel->Size = System::Drawing::Size(36, 13);
+			this->lblLevel->Size = System::Drawing::Size(74, 32);
 			this->lblLevel->TabIndex = 1;
 			this->lblLevel->Text = L"Level:";
 			// 
 			// tbLevel
 			// 
-			this->tbLevel->Location = System::Drawing::Point(75, 23);
+			this->tbLevel->Location = System::Drawing::Point(162, 56);
+			this->tbLevel->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->tbLevel->Maximum = 8;
 			this->tbLevel->Name = L"tbLevel";
-			this->tbLevel->Size = System::Drawing::Size(119, 45);
+			this->tbLevel->Size = System::Drawing::Size(348, 90);
 			this->tbLevel->TabIndex = 0;
-			this->ttHelp->SetToolTip(this->tbLevel, L"Set the compression level, a higher level makes smaller files, but takes longer t" 
+			this->ttHelp->SetToolTip(this->tbLevel, L"Set the compression level, a higher level makes smaller files, but takes longer t"
 				L"o encode");
 			this->tbLevel->Value = 5;
 			this->tbLevel->ValueChanged += gcnew System::EventHandler(this, &Form1::tbLevel_ValueChanged);
@@ -312,18 +325,21 @@ namespace FLACfrontend {
 			this->gbOutputDir->Controls->Add(this->btnOutputDirSameAsInput);
 			this->gbOutputDir->Controls->Add(this->btnSelectDirectory);
 			this->gbOutputDir->Controls->Add(this->txtOutputDirectory);
-			this->gbOutputDir->Location = System::Drawing::Point(12, 292);
+			this->gbOutputDir->Location = System::Drawing::Point(26, 719);
+			this->gbOutputDir->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->gbOutputDir->Name = L"gbOutputDir";
-			this->gbOutputDir->Size = System::Drawing::Size(469, 53);
+			this->gbOutputDir->Padding = System::Windows::Forms::Padding(6, 8, 6, 8);
+			this->gbOutputDir->Size = System::Drawing::Size(1041, 131);
 			this->gbOutputDir->TabIndex = 5;
 			this->gbOutputDir->TabStop = false;
 			this->gbOutputDir->Text = L"Output directory (only for encoding and decoding)";
 			// 
 			// btnOutputDirSameAsInput
 			// 
-			this->btnOutputDirSameAsInput->Location = System::Drawing::Point(375, 21);
+			this->btnOutputDirSameAsInput->Location = System::Drawing::Point(814, 52);
+			this->btnOutputDirSameAsInput->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnOutputDirSameAsInput->Name = L"btnOutputDirSameAsInput";
-			this->btnOutputDirSameAsInput->Size = System::Drawing::Size(85, 22);
+			this->btnOutputDirSameAsInput->Size = System::Drawing::Size(216, 55);
 			this->btnOutputDirSameAsInput->TabIndex = 2;
 			this->btnOutputDirSameAsInput->Text = L"Same as input";
 			this->ttHelp->SetToolTip(this->btnOutputDirSameAsInput, L"Set output directory the same as input directory");
@@ -332,9 +348,10 @@ namespace FLACfrontend {
 			// 
 			// btnSelectDirectory
 			// 
-			this->btnSelectDirectory->Location = System::Drawing::Point(346, 21);
+			this->btnSelectDirectory->Location = System::Drawing::Point(744, 52);
+			this->btnSelectDirectory->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnSelectDirectory->Name = L"btnSelectDirectory";
-			this->btnSelectDirectory->Size = System::Drawing::Size(26, 22);
+			this->btnSelectDirectory->Size = System::Drawing::Size(66, 55);
 			this->btnSelectDirectory->TabIndex = 1;
 			this->btnSelectDirectory->Text = L"...";
 			this->ttHelp->SetToolTip(this->btnSelectDirectory, L"Select an output directory");
@@ -344,17 +361,19 @@ namespace FLACfrontend {
 			// txtOutputDirectory
 			// 
 			this->txtOutputDirectory->Enabled = false;
-			this->txtOutputDirectory->Location = System::Drawing::Point(13, 22);
+			this->txtOutputDirectory->Location = System::Drawing::Point(28, 55);
+			this->txtOutputDirectory->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->txtOutputDirectory->Name = L"txtOutputDirectory";
-			this->txtOutputDirectory->Size = System::Drawing::Size(327, 20);
+			this->txtOutputDirectory->Size = System::Drawing::Size(703, 39);
 			this->txtOutputDirectory->TabIndex = 0;
 			this->txtOutputDirectory->Text = L"<< Same as input directory >>";
 			// 
 			// btnEncode
 			// 
-			this->btnEncode->Location = System::Drawing::Point(12, 351);
+			this->btnEncode->Location = System::Drawing::Point(26, 864);
+			this->btnEncode->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnEncode->Name = L"btnEncode";
-			this->btnEncode->Size = System::Drawing::Size(75, 23);
+			this->btnEncode->Size = System::Drawing::Size(162, 56);
 			this->btnEncode->TabIndex = 6;
 			this->btnEncode->Text = L"&Encode";
 			this->ttHelp->SetToolTip(this->btnEncode, L"Encode WAV files or re-encode FLAC files to FLAC");
@@ -363,9 +382,10 @@ namespace FLACfrontend {
 			// 
 			// btnDecode
 			// 
-			this->btnDecode->Location = System::Drawing::Point(107, 351);
+			this->btnDecode->Location = System::Drawing::Point(200, 864);
+			this->btnDecode->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnDecode->Name = L"btnDecode";
-			this->btnDecode->Size = System::Drawing::Size(75, 23);
+			this->btnDecode->Size = System::Drawing::Size(162, 56);
 			this->btnDecode->TabIndex = 7;
 			this->btnDecode->Text = L"&Decode";
 			this->ttHelp->SetToolTip(this->btnDecode, L"Decode FLAC-files to WAV-files");
@@ -374,9 +394,10 @@ namespace FLACfrontend {
 			// 
 			// btnTest
 			// 
-			this->btnTest->Location = System::Drawing::Point(201, 351);
+			this->btnTest->Location = System::Drawing::Point(436, 864);
+			this->btnTest->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnTest->Name = L"btnTest";
-			this->btnTest->Size = System::Drawing::Size(90, 23);
+			this->btnTest->Size = System::Drawing::Size(243, 56);
 			this->btnTest->TabIndex = 8;
 			this->btnTest->Text = L"&Test for errors";
 			this->ttHelp->SetToolTip(this->btnTest, L"Test whether FLAC-file is not corrupt");
@@ -385,9 +406,10 @@ namespace FLACfrontend {
 			// 
 			// btnFingerprint
 			// 
-			this->btnFingerprint->Location = System::Drawing::Point(311, 351);
+			this->btnFingerprint->Location = System::Drawing::Point(691, 865);
+			this->btnFingerprint->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnFingerprint->Name = L"btnFingerprint";
-			this->btnFingerprint->Size = System::Drawing::Size(75, 23);
+			this->btnFingerprint->Size = System::Drawing::Size(204, 56);
 			this->btnFingerprint->TabIndex = 9;
 			this->btnFingerprint->Text = L"&Fingerprint";
 			this->ttHelp->SetToolTip(this->btnFingerprint, L"Show MD5 sums of FLAC-files");
@@ -396,12 +418,13 @@ namespace FLACfrontend {
 			// 
 			// btnExit
 			// 
-			this->btnExit->Location = System::Drawing::Point(406, 351);
+			this->btnExit->Location = System::Drawing::Point(1079, 864);
+			this->btnExit->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnExit->Name = L"btnExit";
-			this->btnExit->Size = System::Drawing::Size(75, 23);
+			this->btnExit->Size = System::Drawing::Size(162, 56);
 			this->btnExit->TabIndex = 10;
 			this->btnExit->Text = L"E&xit";
-			this->ttHelp->SetToolTip(this->btnExit, L"Exit FLAC frontend");
+			this->ttHelp->SetToolTip(this->btnExit, L"Exit FrontFLAC");
 			this->btnExit->UseVisualStyleBackColor = true;
 			this->btnExit->Click += gcnew System::EventHandler(this, &Form1::btnExit_Click);
 			// 
@@ -410,9 +433,11 @@ namespace FLACfrontend {
 			this->gbGeneral->Controls->Add(this->chkKeepForeign);
 			this->gbGeneral->Controls->Add(this->chkOggFlac);
 			this->gbGeneral->Controls->Add(this->chkDeleteInput);
-			this->gbGeneral->Location = System::Drawing::Point(220, 152);
+			this->gbGeneral->Location = System::Drawing::Point(587, 369);
+			this->gbGeneral->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->gbGeneral->Name = L"gbGeneral";
-			this->gbGeneral->Size = System::Drawing::Size(185, 88);
+			this->gbGeneral->Padding = System::Windows::Forms::Padding(6, 8, 6, 8);
+			this->gbGeneral->Size = System::Drawing::Size(480, 216);
 			this->gbGeneral->TabIndex = 11;
 			this->gbGeneral->TabStop = false;
 			this->gbGeneral->Text = L"General options";
@@ -420,33 +445,36 @@ namespace FLACfrontend {
 			// chkKeepForeign
 			// 
 			this->chkKeepForeign->AutoSize = true;
-			this->chkKeepForeign->Location = System::Drawing::Point(13, 66);
+			this->chkKeepForeign->Location = System::Drawing::Point(28, 163);
+			this->chkKeepForeign->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->chkKeepForeign->Name = L"chkKeepForeign";
-			this->chkKeepForeign->Size = System::Drawing::Size(133, 17);
+			this->chkKeepForeign->Size = System::Drawing::Size(291, 36);
 			this->chkKeepForeign->TabIndex = 2;
 			this->chkKeepForeign->Text = L"Keep foreign metadata";
-			this->ttHelp->SetToolTip(this->chkKeepForeign, L"Keep foreign metadata (like BWF-chunks), see the flac website for more informatio" 
+			this->ttHelp->SetToolTip(this->chkKeepForeign, L"Keep foreign metadata (like BWF-chunks), see the flac website for more informatio"
 				L"n");
 			this->chkKeepForeign->UseVisualStyleBackColor = true;
 			// 
 			// chkOggFlac
 			// 
 			this->chkOggFlac->AutoSize = true;
-			this->chkOggFlac->Location = System::Drawing::Point(13, 43);
+			this->chkOggFlac->Location = System::Drawing::Point(28, 105);
+			this->chkOggFlac->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->chkOggFlac->Name = L"chkOggFlac";
-			this->chkOggFlac->Size = System::Drawing::Size(153, 17);
+			this->chkOggFlac->Size = System::Drawing::Size(321, 36);
 			this->chkOggFlac->TabIndex = 1;
 			this->chkOggFlac->Text = L"Create/read as OGG-FLAC";
-			this->ttHelp->SetToolTip(this->chkOggFlac, L"Create a FLAC-file in the OGG container or force the input file to be read as OGG" 
+			this->ttHelp->SetToolTip(this->chkOggFlac, L"Create a FLAC-file in the OGG container or force the input file to be read as OGG"
 				L"");
 			this->chkOggFlac->UseVisualStyleBackColor = true;
 			// 
 			// chkDeleteInput
 			// 
 			this->chkDeleteInput->AutoSize = true;
-			this->chkDeleteInput->Location = System::Drawing::Point(13, 20);
+			this->chkDeleteInput->Location = System::Drawing::Point(28, 49);
+			this->chkDeleteInput->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->chkDeleteInput->Name = L"chkDeleteInput";
-			this->chkDeleteInput->Size = System::Drawing::Size(104, 17);
+			this->chkDeleteInput->Size = System::Drawing::Size(229, 36);
 			this->chkDeleteInput->TabIndex = 0;
 			this->chkDeleteInput->Text = L"Delete input files";
 			this->ttHelp->SetToolTip(this->chkDeleteInput, L"Delete the input files after a succesful encode or decode operation");
@@ -455,9 +483,11 @@ namespace FLACfrontend {
 			// gbDecoding
 			// 
 			this->gbDecoding->Controls->Add(this->chkDecodeThroughErrors);
-			this->gbDecoding->Location = System::Drawing::Point(220, 243);
+			this->gbDecoding->Location = System::Drawing::Point(587, 593);
+			this->gbDecoding->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->gbDecoding->Name = L"gbDecoding";
-			this->gbDecoding->Size = System::Drawing::Size(185, 43);
+			this->gbDecoding->Padding = System::Windows::Forms::Padding(6, 8, 6, 8);
+			this->gbDecoding->Size = System::Drawing::Size(480, 111);
 			this->gbDecoding->TabIndex = 12;
 			this->gbDecoding->TabStop = false;
 			this->gbDecoding->Text = L"Decoding/testing options";
@@ -465,9 +495,10 @@ namespace FLACfrontend {
 			// chkDecodeThroughErrors
 			// 
 			this->chkDecodeThroughErrors->AutoSize = true;
-			this->chkDecodeThroughErrors->Location = System::Drawing::Point(13, 19);
+			this->chkDecodeThroughErrors->Location = System::Drawing::Point(28, 47);
+			this->chkDecodeThroughErrors->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->chkDecodeThroughErrors->Name = L"chkDecodeThroughErrors";
-			this->chkDecodeThroughErrors->Size = System::Drawing::Size(154, 17);
+			this->chkDecodeThroughErrors->Size = System::Drawing::Size(337, 36);
 			this->chkDecodeThroughErrors->TabIndex = 0;
 			this->chkDecodeThroughErrors->Text = L"Decode/test through errors";
 			this->ttHelp->SetToolTip(this->chkDecodeThroughErrors, L"When errors are found during decoding, do not stop");
@@ -475,9 +506,10 @@ namespace FLACfrontend {
 			// 
 			// btnHelp
 			// 
-			this->btnHelp->Location = System::Drawing::Point(412, 234);
+			this->btnHelp->Location = System::Drawing::Point(1081, 576);
+			this->btnHelp->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnHelp->Name = L"btnHelp";
-			this->btnHelp->Size = System::Drawing::Size(75, 23);
+			this->btnHelp->Size = System::Drawing::Size(162, 56);
 			this->btnHelp->TabIndex = 13;
 			this->btnHelp->Text = L"&Help";
 			this->ttHelp->SetToolTip(this->btnHelp, L"Place your mouse pointer over an option to get more information");
@@ -486,9 +518,10 @@ namespace FLACfrontend {
 			// 
 			// btnAdvanced
 			// 
-			this->btnAdvanced->Location = System::Drawing::Point(411, 167);
+			this->btnAdvanced->Location = System::Drawing::Point(1081, 384);
+			this->btnAdvanced->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnAdvanced->Name = L"btnAdvanced";
-			this->btnAdvanced->Size = System::Drawing::Size(75, 23);
+			this->btnAdvanced->Size = System::Drawing::Size(162, 56);
 			this->btnAdvanced->TabIndex = 14;
 			this->btnAdvanced->Text = L"Ad&vanced";
 			this->ttHelp->SetToolTip(this->btnAdvanced, L"See advanced options");
@@ -497,21 +530,22 @@ namespace FLACfrontend {
 			// 
 			// btnAbout
 			// 
-			this->btnAbout->Location = System::Drawing::Point(412, 263);
+			this->btnAbout->Location = System::Drawing::Point(1081, 648);
+			this->btnAbout->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->btnAbout->Name = L"btnAbout";
-			this->btnAbout->Size = System::Drawing::Size(75, 23);
+			this->btnAbout->Size = System::Drawing::Size(162, 56);
 			this->btnAbout->TabIndex = 15;
 			this->btnAbout->Text = L"A&bout";
-			this->ttHelp->SetToolTip(this->btnAbout, L"Get version number of FLAC Frontend");
+			this->ttHelp->SetToolTip(this->btnAbout, L"Get version number of FrontFLAC");
 			this->btnAbout->UseVisualStyleBackColor = true;
 			this->btnAbout->Click += gcnew System::EventHandler(this, &Form1::btnAbout_Click);
 			// 
 			// Form1
 			// 
 			this->AllowDrop = true;
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(13, 32);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(493, 382);
+			this->ClientSize = System::Drawing::Size(1261, 940);
 			this->Controls->Add(this->btnAbout);
 			this->Controls->Add(this->btnAdvanced);
 			this->Controls->Add(this->btnHelp);
@@ -528,17 +562,20 @@ namespace FLACfrontend {
 			this->Controls->Add(this->btnRemove);
 			this->Controls->Add(this->btnAdd);
 			this->Controls->Add(this->lstFiles);
+			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->MaximizeBox = false;
 			this->Name = L"Form1";
-			this->Text = L"FLAC Frontend";
+			this->Text = L"FrontFLAC";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->DragDrop += gcnew System::Windows::Forms::DragEventHandler(this, &Form1::lstFiles_DragDrop);
 			this->DragEnter += gcnew System::Windows::Forms::DragEventHandler(this, &Form1::lstFiles_DragEnter);
 			this->gbEncoding->ResumeLayout(false);
 			this->gbEncoding->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->tbLevel))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tbLevel))->EndInit();
 			this->gbOutputDir->ResumeLayout(false);
 			this->gbOutputDir->PerformLayout();
 			this->gbGeneral->ResumeLayout(false);
@@ -579,7 +616,7 @@ private: System::Void btnHelp_Click(System::Object^  sender, System::EventArgs^ 
 		 }
 
 private: System::Void btnAbout_Click(System::Object^  sender, System::EventArgs^  e) {
-			 MessageBox::Show("FLAC Frontend v2.1, using FLAC 1.3.0","FLAC Frontend version info",MessageBoxButtons::OK,MessageBoxIcon::Information);
+			 MessageBox::Show("FrontFLAC v2024, based on FLAC Frontend v2.1, using FLAC Commandline Tools vX.X.X","FrontFLAC version info",MessageBoxButtons::OK,MessageBoxIcon::Information);
 		 }
 
 // ----------------------------------//
@@ -928,11 +965,11 @@ private: System::Void lstFiles_DragDrop(System::Object^  sender, System::Windows
 		 }
 private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
 			 if(!(File::Exists("tools/flac.exe"))){
-				 MessageBox::Show("flac.exe is not found, FLAC frontend can't be used without it. Please reinstall FLAC frontend","FLAC not found",MessageBoxButtons::OK,MessageBoxIcon::Error);
+				 MessageBox::Show("flac.exe is not found, FrontFLAC can't be used without it.","FLAC Commandline tools not found",MessageBoxButtons::OK,MessageBoxIcon::Error);
 				 exit(1);
 			 }
 			 if(!(File::Exists("tools/metaflac.exe"))){
-				 MessageBox::Show("metaflac.exe is not found, FLAC frontend can't be used without it. Please reinstall FLAC frontend","metaflac not found",MessageBoxButtons::OK,MessageBoxIcon::Error);
+				 MessageBox::Show("metaflac.exe is not found, FrontFLAC can't be used without it.","FLAC Commandline tools not found",MessageBoxButtons::OK,MessageBoxIcon::Error);
 				 exit(1);
 			 }
 		 }

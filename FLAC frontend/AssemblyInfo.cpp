@@ -10,12 +10,12 @@ using namespace System::Security::Permissions;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly:AssemblyTitleAttribute("FLACfrontend")];
+[assembly:AssemblyTitleAttribute("FrontFLAC")];
 [assembly:AssemblyDescriptionAttribute("")];
 [assembly:AssemblyConfigurationAttribute("")];
 [assembly:AssemblyCompanyAttribute("")];
-[assembly:AssemblyProductAttribute("FLACfrontend")];
-[assembly:AssemblyCopyrightAttribute("Copyright (c)  2013")];
+[assembly:AssemblyProductAttribute("FrontFLAC")];
+[assembly:AssemblyCopyrightAttribute("Copyright (c)  2024")];
 [assembly:AssemblyTrademarkAttribute("")];
 [assembly:AssemblyCultureAttribute("")];
 

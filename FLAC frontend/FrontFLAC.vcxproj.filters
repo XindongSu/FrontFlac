@@ -18,7 +18,7 @@
     <ClCompile Include="AssemblyInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FLAC frontend.cpp">
+    <ClCompile Include="FrontFLAC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Advanced_options.cpp">
@@ -45,13 +45,5 @@
     <ResourceCompile Include="app.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Advanced_options.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resX">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
   </ItemGroup>
 </Project>
